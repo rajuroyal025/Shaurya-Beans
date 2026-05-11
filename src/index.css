@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+
+  --color-green-deep: #1a3a1a;
+  --color-green-mid: #2d6a2d;
+  --color-green-bright: #4caf50;
+  --color-green-light: #81c784;
+  --color-gold: #c8a84b;
+  --color-gold-light: #f0d080;
+  --color-cream: #faf6ed;
+  --color-warm-white: #fffef8;
+  --color-text-dark: #1a1a0f;
+  --color-text-mid: #3d3d2a;
+  --color-text-light: #7a7a5a;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-warm-white text-text-dark selection:bg-gold selection:text-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.glass {
+  @apply backdrop-blur-md bg-white/70 border border-white/20;
+}
+
